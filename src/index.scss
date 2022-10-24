@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+* {
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -16,10 +20,18 @@ code {
     monospace;
 }
 
+input {
+  border: none;
+  outline: none;
+}
+
 .MuiInputBase-root {
   background-color: white;
   border-radius: .375rem!important;
   :hover {
     border: none!important;
+  }
+  @media only screen and (max-width: 640px) {
+    border-radius: 1000px!important;
   }
 }

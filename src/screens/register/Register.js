@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Form } from 'react-bootstrap';
 import { login } from 'src/actions/accountActions';
 import { useStateValue } from 'src/services/state/State';
 import { actions } from 'src/services/state/Reducer';
@@ -104,99 +103,101 @@ function RegisterScreen() {
   }
 
   return (
-    <div className="">
+    <div className="register">
       <ScrollToTop />
-      <div className='flex flex-col w-full pt-[150px] items-center bg-user-background h-[1300px] bg-100% bg-no-repeat'>
+      <div className='flex flex-col w-full pt-[150px] items-center bg-user-background sm:h-[1300px] h-[1300px] bg-100% bg-no-repeat'>
         <img src={logo} className='logo' />
-        <div className="pt-[50px]">
-          <div className="rounded-2xl bg-white overflow-hidden">
-            <h4 className='w-full py-[100px] font-bolder text-5xl text-center text-white bg-auth-header-background bg-100% my-0' style={{ fontWeight: 'bold' }}>Sign Up</h4>
-            <div className="flex flex-col items-center w-[555px] min-w-[400px] bg-[#D5D5D5] py-4 px-5">
-              <div className="form-input-row w-full form-input flex items-center justify-between mb-3">
-                <img className='w-[24px] h-[20px] mr-2' src={userImage} alt='user' />
-                <Form.Control
+        <div className="pt-[50px] px-4 w-full flex justify-around items-center">
+          <div className="rounded-2xl bg-white overflow-hidden w-full max-w-[555px] min-w-[400px]">
+            <h4 className='w-full sm:pb-[80px] pb-[60px] sm:pt-[100px] pt-[80px] font-bolder text-5xl text-center text-white bg-auth-header-background bg-100% my-0' style={{ fontWeight: 'bold' }}>Sign Up</h4>
+            <div className="flex flex-col items-center w-full bg-[#D5D5D5] py-12 !px-6 sm:!px-8">
+              <div className="w-full flex items-center justify-between mb-6">
+                <img className='w-[20px] mr-2' src={userImage} alt='user' />
+                <input
+                  className="border border-solid border-input-border focus:border-blue-400 px-3 py-2 w-full shadow sm:!rounded-md !rounded-full"
                   placeholder="First Name"
-                  aria-label="First Name"
-                  aria-describedby="basic-addon1"
-                  className={`text-input`}
                   value={firstName}
                   onChange={handleFirstNameChange}
                 />
-                <Form.Control
+                <input
                   placeholder="Last Name"
                   aria-label="Last Name"
+                  className="border border-solid border-input-border focus:border-blue-400 px-3 py-2 w-full shadow sm:!rounded-md !rounded-full"
                   aria-describedby="basic-addon1"
-                  className={`text-input`}
                   value={lastName}
                   style={{ marginLeft: 10 }}
                   onChange={handleLastNameChange}
                 />
               </div>
-              <div className="form-input w-full form-input flex items-center justify-between mb-3">
-                <img className='w-[24px] h-[20px] mr-2' src={messageImage} alt='email' />
-                <Form.Control
+              <div className="w-full flex items-center justify-between mb-6">
+                <img className='w-[20px] mr-2' src={messageImage} alt='email' />
+                <input
                   placeholder="Email"
                   aria-label="Email"
                   aria-describedby="basic-addon1"
-                  className={`text-input ${invalidEmail && 'text-input-invalid'}`}
+                  className={`border border-solid border-input-border focus:border-blue-400 px-3 py-2 w-full shadow sm:!rounded-md !rounded-full ${invalidEmail && 'text-input-invalid'}`}
                   value={email}
                   onChange={handleEmailChange}
                   onBlur={() => !verifyEmail(email) && setInvalidEmail(true)}
                 />
               </div>
-              <div className="form-input-row w-full form-input flex items-center justify-between mb-3">
-                <img className='w-[24px] h-[20px] mr-2' src={callImage} alt='call' />
-                <Form.Control
-                  placeholder="Phone"
-                  aria-label="Phone"
-                  aria-describedby="basic-addon1"
-                  className={`text-input ${invalidPhone && 'text-input-invalid'}`}
+              <div className="w-full flex flex-col sm:flex-row items-center justify-between mb-6">
+                <div className='w-full flex items-center justify-between'>
+                  <img className='w-[20px] mr-2' src={callImage} alt='call' />
+                  <input
+                    placeholder="Phone"
+                    aria-label="Phone"
+                    aria-describedby="basic-addon1"
+                  className={`border border-solid border-input-border focus:border-blue-400 px-3 py-2 w-full shadow sm:!rounded-md !rounded-full ${invalidPhone && 'text-input-invalid'}`}
                   value={phone}
-                  onChange={handlePhoneChange}
-                  onBlur={() => phone.length !== 10 && setInvalidPhone(true)}
-                />
-                <img className='w-[24px] h-[20px] mx-2' src={flagImage} alt='flag' />
-                <FormControl variant="standard" style={{ width: '105%' }}>
-                  <Autocomplete
-                    label="Country"
-                    value={country}
-                    options={countries}
-                    onChange={handleCountryChange}
-                    classes='bg-white'
-                    renderInput={(params) => (
-                      <TextField
-                        {...params}
-                        sx={{
-                          '& legend': { display: 'none' },
-                          '& fieldset': { top: 0 },
-                        }}
-                        size='small'
-                        placeholder="Country"
-                        style={{ height: 38 }}
-                      />
-                    )}
+                    onChange={handlePhoneChange}
+                    onBlur={() => phone.length !== 10 && setInvalidPhone(true)}
                   />
-                </FormControl>
+                </div>
+                <div className='w-full flex items-center justify-between !ml-0 sm:!ml-2 !mt-6 sm:!mt-0'>
+                  <img className='w-[20px] !mr-2' src={flagImage} alt='flag' />
+                  <FormControl variant="standard" style={{ width: '105%' }}>
+                    <Autocomplete
+                      label="Country"
+                      value={country}
+                      options={countries}
+                      onChange={handleCountryChange}
+                      classes='bg-white'
+                      renderInput={(params) => (
+                        <TextField
+                          {...params}
+                          sx={{
+                            '& legend': { display: 'none' },
+                            '& fieldset': { top: 0 },
+                          }}
+                          size='small'
+                          placeholder="Country"
+                          style={{ height: 38 }}
+                        />
+                      )}
+                    />
+                  </FormControl>
+                </div>
               </div>
-              <div className="form-input w-full form-input flex items-center justify-between mb-3">
-                <img className='w-[24px] h-[20px] mr-2' src={passwordImage} alt='Password' />
-                <Form.Control
+              <div className="w-full flex items-center justify-between mb-6">
+                <img className='w-[20px] mr-2' src={passwordImage} alt='Password' />
+                <input
                   placeholder="Password"
                   aria-label="Password"
                   aria-describedby="basic-addon1"
-                  className={`text-input ${passwordMismatch && 'text-input-invalid'}`}
+                  className={`border border-solid border-input-border focus:border-blue-400 px-3 py-2 w-full shadow sm:!rounded-md !rounded-full ${passwordMismatch && 'text-input-invalid'}`}
                   type='password'
                   value={password}
                   onChange={handlePasswordChange}
                 />
               </div>
-              <div className="form-input w-full form-input flex items-center justify-between mb-3">
-                <img className='w-[24px] h-[20px] mr-2' src={repasswordImage} alt='Re-Enter Password' />
-                <Form.Control
+              <div className="w-full flex items-center justify-between mb-6">
+                <img className='w-[20px] mr-2' src={repasswordImage} alt='Re-Enter Password' />
+                <input
                   placeholder="Re-Enter Password"
                   aria-label="Re-Enter Password"
                   aria-describedby="basic-addon1"
-                  className={`text-input ${passwordMismatch && 'text-input-invalid'}`}
+                  className={`border border-solid border-input-border focus:border-blue-400 px-3 py-2 w-full shadow sm:!rounded-md !rounded-full ${passwordMismatch && 'text-input-invalid'}`}
                   type='password'
                   value={confirmPassword}
                   onChange={handleConfirmPasswordChange}

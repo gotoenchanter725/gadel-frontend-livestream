@@ -8,7 +8,6 @@ import { reducer } from 'src/services/state/Reducer';
 import { initialState } from 'src/services/state/InitialState';
 // import Auth from 'src/components/Auth';
 import Routes from 'src/Routes';
-import 'bootstrap/dist/css/bootstrap.min.css';
 
 const history = createBrowserHistory();
 

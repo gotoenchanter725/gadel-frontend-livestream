@@ -7,10 +7,7 @@ module.exports = {
     theme: {
         extend: {
             colors: {
-                'primary': "#111827",
-                'danger': "#7F1D1D",
-                'focus': "#111827",
-                'disable': "#1118279c",
+                'input-border': '#A8A6A6', 
             },
 
             fontFamily: {

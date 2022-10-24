@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Form } from 'react-bootstrap';
 import { login } from 'src/actions/accountActions';
 import { useStateValue } from 'src/services/state/State';
 import { actions } from 'src/services/state/Reducer';
@@ -58,31 +57,27 @@ function LoginScreen() {
   return (
     <div className="login">
       <ScrollToTop />
-      <div className='flex flex-col w-full pt-[200px] items-center bg-user-background h-[1200px] bg-100% bg-no-repeat'>
+      <div className='flex flex-col w-full pt-[100px] sm:pt-[200px] items-center bg-user-background h-[1000px] sm:h-[1200px] bg-100% bg-no-repeat'>
         <img src={logo} className='logo' />
-        <div className="pt-[50px]">
-          <div className="right-container rounded-2xl bg-white overflow-hidden">
-            <h4 className='w-full pb-[80px] pt-[100px] font-bolder text-5xl text-center text-white bg-auth-header-background bg-100% my-0'>Sign In</h4>
-            <div className="flex flex-col items-center w-[555px] min-w-[400px] bg-[#D5D5D5] py-4 px-5">
-              <div className="w-full form-input flex items-center justify-between mb-4">
-                <img className='w-[28px] h-[28px] mr-2' src={userEmailImage} alt='user e-mail' />
-                <Form.Control
+        <div className="pt-[50px] px-4 w-full flex justify-around items-center">
+          <div className="right-container rounded-2xl bg-white w-full max-w-[555px] min-w-[400px] overflow-hidden">
+            <h4 className='w-full sm:pb-[80px] pb-[60px] sm:pt-[100px] pt-[80px]  font-bolder text-5xl text-center text-white bg-auth-header-background bg-100% my-0'>Sign In</h4>
+            <div className="flex flex-col items-center w-full bg-[#D5D5D5] py-6 px-8">
+              <div className="w-full flex items-center justify-between mb-6">
+                <img className='w-[20px] mr-2' src={userEmailImage} alt='user e-mail' />
+                <input
                   placeholder="Email"
-                  aria-label="Email"
-                  aria-describedby="basic-addon1"
-                  className={`text-input ${invalidEmail && 'text-input-invalid'}`}
+                  className={`border border-solid border-input-border focus:border-blue-400 px-3 py-2 w-full shadow sm:!rounded-md !rounded-full ${invalidEmail && 'text-input-invalid'}`}
                   value={email}
                   onChange={handleEmailChange}
                   onBlur={() => !verifyEmail(email) && setInvalidEmail(true)}
                 />
               </div>
-              <div className="w-full form-input flex items-center justify-between mb-4">
-                <img className='w-[28px] h-[28px] mr-2' src={passwordImage} alt='user e-mail' />
-                <Form.Control
+              <div className="w-full flex items-center justify-between mb-6">
+                <img className='w-[20px] mr-2' src={passwordImage} alt='user e-mail' />
+                <input
                   placeholder="Password"
-                  aria-label="Password"
-                  aria-describedby="basic-addon1"
-                  className="text-input"
+                  className="border border-solid border-input-border focus:border-blue-400 px-3 py-2 w-full shadow sm:!rounded-md !rounded-full"
                   type='password'
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
