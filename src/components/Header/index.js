@@ -48,8 +48,8 @@ export default function Header({
   return (
     <div className='header-row'>
       <div className='header-logo-container'>
-        <div className="drawer-icon w3-button" onClick={() => handleOpenDrawer()}>
-          <MenuIcon className='menu-icon' />
+        <div className="" onClick={() => handleOpenDrawer()}>
+          <MenuIcon className='menu-icon cursor-pointer mr-2' size="large" />
         </div>
         <div className='logo-container' onClick={() => navigate('/')}>
           <div className='icon-container'>

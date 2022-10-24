@@ -14,8 +14,14 @@ import {
 import { ScrollToTop } from 'src/components';
 import { verifyEmail } from 'src/services/Validations';
 import logo from 'src/assets/icon-white.png';
+import passwordImage from 'src/assets/images/icon/setpassword.png';
+import repasswordImage from 'src/assets/images/icon/repassword.png';
+import messageImage from 'src/assets/images/icon/message.png';
+import userImage from 'src/assets/images/icon/user.png';
+import callImage from 'src/assets/images/icon/call.png';
+import flagImage from 'src/assets/images/icon/flag.png';
 import { countries } from 'src/services/Settings';
-import './Register.css';
+import './Register.scss';
 
 function RegisterScreen() {
   const [, dispatch] = useStateValue();
@@ -98,123 +104,122 @@ function RegisterScreen() {
   }
 
   return (
-    <div className="login">
+    <div className="">
       <ScrollToTop />
-      <div className='top-container'>
+      <div className='flex flex-col w-full pt-[150px] items-center bg-user-background h-[1300px] bg-100% bg-no-repeat'>
         <img src={logo} className='logo' />
-      </div>
-      <div className="right">
-        <div className="right-container">
-          <div className="form">
-            <div className="form-input">
-              <h4 className='title' style={{ fontWeight: 'bold' }}>Sign Up</h4>
-            </div>
-            <div className="form-input-row">
-              <Form.Control
-                placeholder="First Name"
-                aria-label="First Name"
-                aria-describedby="basic-addon1"
-                className={`text-input`}
-                value={firstName}
-                onChange={handleFirstNameChange}
-              />
-              <Form.Control
-                placeholder="Last Name"
-                aria-label="Last Name"
-                aria-describedby="basic-addon1"
-                className={`text-input`}
-                value={lastName}
-                style={{ marginLeft: 10 }}
-                onChange={handleLastNameChange}
-              />
-            </div>
-            <div className="form-input">
-              <Form.Control
-                placeholder="Email"
-                aria-label="Email"
-                aria-describedby="basic-addon1"
-                className={`text-input ${invalidEmail && 'text-input-invalid'}`}
-                value={email}
-                onChange={handleEmailChange}
-                onBlur={() => !verifyEmail(email) && setInvalidEmail(true)}
-              />
-            </div>
-            <div className="form-input-row">
-              <Form.Control
-                placeholder="Phone"
-                aria-label="Phone"
-                aria-describedby="basic-addon1"
-                className={`text-input ${invalidPhone && 'text-input-invalid'}`}
-                value={phone}
-                onChange={handlePhoneChange}
-                onBlur={() => phone.length !== 10 && setInvalidPhone(true)}
-              />
-              <FormControl variant="standard" style={{ width: '105%', marginLeft: 10 }}>
-                <Autocomplete
-                  label="Country"
-                  value={country}
-                  options={countries}
-                  onChange={handleCountryChange}
-                  classes={{
-                    input: 'font-family',
-                  }}
-                  renderInput={(params) => (
-                    <TextField
-                      {...params}
-                      sx={{
-                        '& legend': { display: 'none' },
-                        '& fieldset': { top: 0 },
-                      }}
-                      size='small'
-                      placeholder="Country"
-                      style={{ height: 38 }}
-                    />
-                  )}
+        <div className="pt-[50px]">
+          <div className="rounded-2xl bg-white overflow-hidden">
+            <h4 className='w-full py-[100px] font-bolder text-5xl text-center text-white bg-auth-header-background bg-100% my-0' style={{ fontWeight: 'bold' }}>Sign Up</h4>
+            <div className="flex flex-col items-center w-[555px] min-w-[400px] bg-[#D5D5D5] py-4 px-5">
+              <div className="form-input-row w-full form-input flex items-center justify-between mb-3">
+                <img className='w-[24px] h-[20px] mr-2' src={userImage} alt='user' />
+                <Form.Control
+                  placeholder="First Name"
+                  aria-label="First Name"
+                  aria-describedby="basic-addon1"
+                  className={`text-input`}
+                  value={firstName}
+                  onChange={handleFirstNameChange}
                 />
-              </FormControl>
-            </div>
-            <div className="form-input">
-              <Form.Control
-                placeholder="Password"
-                aria-label="Password"
-                aria-describedby="basic-addon1"
-                className={`text-input ${passwordMismatch && 'text-input-invalid'}`}
-                type='password'
-                value={password}
-                onChange={handlePasswordChange}
-              />
-            </div>
-            <div className="form-input">
-              <Form.Control
-                placeholder="Re-Enter Password"
-                aria-label="Re-Enter Password"
-                aria-describedby="basic-addon1"
-                className={`text-input ${passwordMismatch && 'text-input-invalid'}`}
-                type='password'
-                value={confirmPassword}
-                onChange={handleConfirmPasswordChange}
-              />
-            </div>
-            {passwordMismatch && (
-              <div className='password-mismatch'>
-                Passwords does not match.
+                <Form.Control
+                  placeholder="Last Name"
+                  aria-label="Last Name"
+                  aria-describedby="basic-addon1"
+                  className={`text-input`}
+                  value={lastName}
+                  style={{ marginLeft: 10 }}
+                  onChange={handleLastNameChange}
+                />
               </div>
-            )}
-            <div className='forgot-password-button'>
-              Forgot Password?
-            </div>
-            {open ? (
-              <div className='register-form-button'>
-                <CircularProgress />
+              <div className="form-input w-full form-input flex items-center justify-between mb-3">
+                <img className='w-[24px] h-[20px] mr-2' src={messageImage} alt='email' />
+                <Form.Control
+                  placeholder="Email"
+                  aria-label="Email"
+                  aria-describedby="basic-addon1"
+                  className={`text-input ${invalidEmail && 'text-input-invalid'}`}
+                  value={email}
+                  onChange={handleEmailChange}
+                  onBlur={() => !verifyEmail(email) && setInvalidEmail(true)}
+                />
               </div>
-            ) :
-              (<div className='register-form-button' onClick={handleSubmit}>
-                Sign up
-              </div>)}
-            <div className="have-an-account">
-              Already have an account?
-              <div className='text-button-login' onClick={() => navigate('/login')}>
-                Sign in
+              <div className="form-input-row w-full form-input flex items-center justify-between mb-3">
+                <img className='w-[24px] h-[20px] mr-2' src={callImage} alt='call' />
+                <Form.Control
+                  placeholder="Phone"
+                  aria-label="Phone"
+                  aria-describedby="basic-addon1"
+                  className={`text-input ${invalidPhone && 'text-input-invalid'}`}
+                  value={phone}
+                  onChange={handlePhoneChange}
+                  onBlur={() => phone.length !== 10 && setInvalidPhone(true)}
+                />
+                <img className='w-[24px] h-[20px] mx-2' src={flagImage} alt='flag' />
+                <FormControl variant="standard" style={{ width: '105%' }}>
+                  <Autocomplete
+                    label="Country"
+                    value={country}
+                    options={countries}
+                    onChange={handleCountryChange}
+                    classes='bg-white'
+                    renderInput={(params) => (
+                      <TextField
+                        {...params}
+                        sx={{
+                          '& legend': { display: 'none' },
+                          '& fieldset': { top: 0 },
+                        }}
+                        size='small'
+                        placeholder="Country"
+                        style={{ height: 38 }}
+                      />
+                    )}
+                  />
+                </FormControl>
+              </div>
+              <div className="form-input w-full form-input flex items-center justify-between mb-3">
+                <img className='w-[24px] h-[20px] mr-2' src={passwordImage} alt='Password' />
+                <Form.Control
+                  placeholder="Password"
+                  aria-label="Password"
+                  aria-describedby="basic-addon1"
+                  className={`text-input ${passwordMismatch && 'text-input-invalid'}`}
+                  type='password'
+                  value={password}
+                  onChange={handlePasswordChange}
+                />
+              </div>
+              <div className="form-input w-full form-input flex items-center justify-between mb-3">
+                <img className='w-[24px] h-[20px] mr-2' src={repasswordImage} alt='Re-Enter Password' />
+                <Form.Control
+                  placeholder="Re-Enter Password"
+                  aria-label="Re-Enter Password"
+                  aria-describedby="basic-addon1"
+                  className={`text-input ${passwordMismatch && 'text-input-invalid'}`}
+                  type='password'
+                  value={confirmPassword}
+                  onChange={handleConfirmPasswordChange}
+                />
+              </div>
+              {passwordMismatch && (
+                <div className='password-mismatch'>
+                  Passwords does not match.
+                </div>
+              )}
+              {open ? (
+                <div className='bg-[#FF0000] rounded-md py-2 px-5 font-bold text-md cursor-pointer text-white'>
+                  <CircularProgress />
+                </div>
+              ) :
+                (<div className='bg-[#FF0000] rounded-md py-2 px-5 font-bold text-md cursor-pointer text-white' onClick={handleSubmit}>
+                  Sign up
+                </div>)}
+              <div className="have-an-account mt-3">
+                Already have an account?
+                <div className='text-button-login' onClick={() => navigate('/login')}>
+                  Sign in
+                </div>
               </div>
             </div>
           </div>

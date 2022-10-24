@@ -8,7 +8,9 @@ import { CircularProgress, Snackbar } from '@mui/material';
 import { ScrollToTop } from 'src/components';
 import { verifyEmail } from 'src/services/Validations';
 import logo from 'src/assets/icon-white.png';
-import './Login.css';
+import passwordImage from 'src/assets/images/icon/password.png';
+import userEmailImage from 'src/assets/images/icon/user-email.png';
+import './Login.scss';
 
 function LoginScreen() {
   const [, dispatch] = useStateValue();
@@ -56,54 +58,49 @@ function LoginScreen() {
   return (
     <div className="login">
       <ScrollToTop />
-      <div className='top-container'>
+      <div className='flex flex-col w-full pt-[200px] items-center bg-user-background h-[1200px] bg-100% bg-no-repeat'>
         <img src={logo} className='logo' />
-      </div>
-      <div className="right">
-        <div className="right-container">
-          <div className="form">
-            <div className="form-input">
-              <h4 className='title' style={{ fontWeight: 'bold' }}>Sign In</h4>
-            </div>
-            <div className="form-input">
-              <Form.Control
-                placeholder="Email"
-                aria-label="Email"
-                aria-describedby="basic-addon1"
-                className={`text-input ${invalidEmail && 'text-input-invalid'}`}
-                value={email}
-                style={{ marginTop: 15 }}
-                onChange={handleEmailChange}
-                onBlur={() => !verifyEmail(email) && setInvalidEmail(true)}
-              />
-            </div>
-            <div className="form-input">
-              <Form.Control
-                placeholder="Password"
-                aria-label="Password"
-                aria-describedby="basic-addon1"
-                className="text-input"
-                type='password'
-                value={password}
-                style={{ marginTop: 15 }}
-                onChange={(e) => setPassword(e.target.value)}
-              />
-            </div>
-            <div className='forgot-password-button'>
-              Forgot Password?
-            </div>
-            {open ? (
-              <div className='register-form-button'>
-                <CircularProgress />
+        <div className="pt-[50px]">
+          <div className="right-container rounded-2xl bg-white overflow-hidden">
+            <h4 className='w-full pb-[80px] pt-[100px] font-bolder text-5xl text-center text-white bg-auth-header-background bg-100% my-0'>Sign In</h4>
+            <div className="flex flex-col items-center w-[555px] min-w-[400px] bg-[#D5D5D5] py-4 px-5">
+              <div className="w-full form-input flex items-center justify-between mb-4">
+                <img className='w-[28px] h-[28px] mr-2' src={userEmailImage} alt='user e-mail' />
+                <Form.Control
+                  placeholder="Email"
+                  aria-label="Email"
+                  aria-describedby="basic-addon1"
+                  className={`text-input ${invalidEmail && 'text-input-invalid'}`}
+                  value={email}
+                  onChange={handleEmailChange}
+                  onBlur={() => !verifyEmail(email) && setInvalidEmail(true)}
+                />
               </div>
-            ) :
-              (<div className='register-form-button' onClick={handleSubmit}>
-                Sign in
-              </div>)}
-            <div className="have-an-account">
-              Don't have an account?
-              <div className='text-button-login' onClick={() => navigate('/register')}>
-                Sign up
+              <div className="w-full form-input flex items-center justify-between mb-4">
+                <img className='w-[28px] h-[28px] mr-2' src={passwordImage} alt='user e-mail' />
+                <Form.Control
+                  placeholder="Password"
+                  aria-label="Password"
+                  aria-describedby="basic-addon1"
+                  className="text-input"
+                  type='password'
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
+                />
+              </div>
+              {open ? (
+                <div className='bg-[#FF0000] rounded-md py-2 px-5 font-bold text-md cursor-pointer text-white '>
+                  <CircularProgress />
+                </div>
+              ) :
+                (<div className='bg-[#FF0000] rounded-md py-2 px-5 font-bold text-md cursor-pointer text-white ' onClick={handleSubmit}>
+                  Sign in
+                </div>)}
+              <div className="have-an-account mb-4">
+                Don't have an account?
+                <div className='text-button-login' onClick={() => navigate('/register')}>
+                  Sign up
+                </div>
               </div>
             </div>
           </div>
