@@ -2,6 +2,7 @@ import React, { lazy, Suspense } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import LoadingScreen from 'src/components/LoadingScreen';
 import { AuthGuard, GuestGuard } from './components';
+import SwitchLayout from './layouts/authLayout';
 
 const routesConfig = [
   {
@@ -38,12 +39,12 @@ const renderRoutes = (routes) => (routes ? (
         const Component = route.component;
 
         return (
-          <Route
-            key={i}
-            path={route.path}
-            exact={route.exact}
-            element={<Component />}
-          />
+            <Route
+              key={i}
+              path={route.path}
+              exact={route.exact}
+              element={<Component />}
+            />
         );
       })}
     </Routes>

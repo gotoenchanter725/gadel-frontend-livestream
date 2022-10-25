@@ -16,7 +16,7 @@ import {
 import user from 'src/assets/images/image.png';
 import post from 'src/assets/images/post.jpeg';
 import { POSTS } from 'src/mock/mockData';
-import './Home.css';
+import './Home.scss';
 
 function HomeScreen() {
   const navigate = useNavigate();
@@ -36,9 +36,9 @@ function HomeScreen() {
   }
 
   return (
-    <div className="home" style={{ position: 'relative' }}>
+    <div className="" style={{ position: 'relative' }}>
       <Header />
-      <div className='main'>
+      <div className='home main'>
         <Sidebar active="home" />
         <div className='main-container'>
           <div className='new-post-container'>
