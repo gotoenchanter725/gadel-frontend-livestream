@@ -30,6 +30,11 @@ const routesConfig = [
     guard: AuthGuard,
     component: lazy(() => import('src/screens/profile/Profile'))
   },
+  {
+    path: '/posts',
+    guard: AuthGuard,
+    component: lazy(() => import('src/screens/posts/posts'))
+  },
 ];
 
 const renderRoutes = (routes) => (routes ? (

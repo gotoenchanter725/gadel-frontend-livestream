@@ -1,0 +1,77 @@
+    .create-post-container-wrapp {
+        background-color: #ffffff;
+        border-radius: 10px;
+        padding: 10px;
+
+        .create-post-container {
+            display: flex;
+            align-items: center;
+        }
+
+        .create-post {
+            color: #9b9a9b;
+            font-size: 18px;
+            margin-left: 10px;
+            font-family: 'Poppins';
+        }
+
+        .post-container {
+            width: 97%;
+            display: flex;
+            margin: 15px 10px;
+            border-radius: 10px;
+            border: 1px solid #9b9a9b;
+            align-items: flex-start;
+            padding: 10px;
+        }
+
+        .new-post-input {
+            border: 0px;
+            margin-top: 7px;
+            font-family: 'Poppins';
+        }
+
+        .new-post-buttons {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-right: 10px;
+        }
+
+        .new-post-buttons-left {
+            display: flex;
+            align-items: center;
+        }
+
+        .new-post-button {
+            display: flex;
+            align-items: center;
+            padding: 5px 10px;
+            margin: 5px 10px;
+            background-color: #efe8e8;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .submit-button {
+            background-color: #e24333;
+            border-radius: 20px;
+            color: #ffffff;
+            font-weight: 600;
+            padding: 7px 30px;
+            cursor: pointer;
+        }
+
+        .new-post-icon {
+            font-size: 20px !important;
+            color: #e04636;
+        }
+
+        .new-post-text {
+            font-size: 14px;
+            color: #000000;
+            font-family: 'Poppins';
+            font-weight: 600;
+            margin-left: 10px;
+        }
+    }

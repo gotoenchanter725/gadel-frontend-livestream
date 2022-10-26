@@ -14,29 +14,28 @@ import authService from 'src/services/authService';
 import user from 'src/assets/images/image.png';
 import MenuIcon from 'src/assets/images/icon/menu.png';
 import MusicIcon from 'src/assets/images/icon/music.png';
+import LogoIcon from 'src/assets/logo-header.png';
 
 import "./index.scss"
 
 // Custom Dropdown
-export default function Header({
-  hideButtons, isCheckout, isAdmin
-}) {
-  const [{ cartItems, stompClient, access_token }, dispatch] = useStateValue();
+export default function Header(props) {
+  // const [{ cartItems, stompClient, access_token }, dispatch] = useStateValue();
   const navigate = useNavigate();
 
-  const handleLogout = async () => {
-    await authService.logout();
-    dispatch({
-      type: actions.SET_ACCESS_TOKEN,
-      payload: null
-    });
-    dispatch({
-      type: actions.SET_USERNAME,
-      payload: null
-    });
-    navigate('/login');
-    handleCloseDrawer()
-  }
+  // const handleLogout = async () => {
+  //   await authService.logout();
+  //   dispatch({
+  //     type: actions.SET_ACCESS_TOKEN,
+  //     payload: null
+  //   });
+  //   dispatch({
+  //     type: actions.SET_USERNAME,
+  //     payload: null
+  //   });
+  //   navigate('/login');
+  //   handleCloseDrawer()
+  // }
 
   const handleOpenDrawer = () => {
     document.getElementById("mySidebar").style.width = "100%";
@@ -48,17 +47,27 @@ export default function Header({
   }
 
   return (
-    <div className='px-3 py-4 flex items-center justify-between'>
+    <div className='px-3 py-4 flex items-center justify-between bg-white shadow-md'>
       <div className='flex items-center'>
         <div className="cursor-pointer w-[18px] md:w-[25px] aspect-[1/1] mx-1 md:mx-2" onClick={() => handleOpenDrawer()}>
           <img src={MenuIcon} className='w-full h-full' />
         </div>
-        <div className='flex items-center mr-1' onClick={() => navigate('/')}>
-          <div className='w-[30px] sm:w-[40px] md:w-[40px] box-border aspect-[1/1] cursor-pointer flex justify-around items-center ml-1 md:ml-2 p-1.5 md:p-2 shadow shadow-shadow rounded-full'>
-            <img src={MusicIcon} className='w-full' />
-          </div>
-          <div className='text-primary font-bold ml-2 text-md md:text-xl min-w-[90px] md:min-w-[120px]'>Live Stream</div>
-        </div>
+        {
+          (props.type && props.type == "home") ? (
+            <div className='flex items-center mr-1' onClick={() => navigate('/')}>
+              <div className='w-[30px] sm:w-[40px] md:w-[50px] box-border aspect-[1/1] cursor-pointer flex justify-around items-center ml-1 md:ml-2 p-1.5 md:p-2 shadow shadow-shadow rounded-full'>
+                <img src={MusicIcon} className='w-full' />
+              </div>
+              <div className='text-primary font-bold ml-2 text-md md:text-xl min-w-[90px] md:min-w-[120px]'>Live Stream</div>
+            </div>
+          ) : (
+            <div className='flex items-center mr-1' onClick={() => navigate('/')}>
+              <div className='w-[80px] sm:w-[120px] md:w-[150px] cursor-pointer flex justify-around items-center ml-1 md:ml-2'>
+                <img src={LogoIcon} className='w-full' />
+              </div>
+            </div>
+          )
+        }
       </div>
       <div className='flex items-center'>
         <input className='w-full md:min-w-[300px] rounded-full shadow shadow-shadow text-xs sm:text-sm md:text-md px-1.5 md:px-3 py-1 md:py-2 bg-[#FAF7F7]' placeholder='Start typing to search' />
