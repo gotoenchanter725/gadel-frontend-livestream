@@ -8,6 +8,7 @@ module.exports = {
         extend: {
             colors: {
                 'primary': '#FF0000',
+                'button': "#FD5555", 
                 'secondary': '#EBE5E5',
                 'secondary-font': '#767373',
                 'input-border': '#A8A6A6',
@@ -24,6 +25,9 @@ module.exports = {
             },
             backgroundSize: {
                 '100%': "100% 100%"
+            }, 
+            boxShadow: {
+                'button': "0px 0px 8px rgba(255, 0, 0, 0.25)"
             }
         },
         screens: {

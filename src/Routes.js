@@ -35,6 +35,26 @@ const routesConfig = [
     guard: AuthGuard,
     component: lazy(() => import('src/screens/posts/posts'))
   },
+  {
+    path: '/pictures',
+    guard: AuthGuard,
+    component: lazy(() => import('src/screens/posts/pictures'))
+  },
+  {
+    path: '/videos',
+    guard: AuthGuard,
+    component: lazy(() => import('src/screens/posts/videos'))
+  },
+  {
+    path: '/audios',
+    guard: AuthGuard,
+    component: lazy(() => import('src/screens/posts/audios'))
+  },
+  {
+    path: '/live-streams',
+    guard: AuthGuard,
+    component: lazy(() => import('src/screens/posts/liveStreams'))
+  },
 ];
 
 const renderRoutes = (routes) => (routes ? (

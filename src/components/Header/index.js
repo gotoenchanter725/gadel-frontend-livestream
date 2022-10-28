@@ -47,7 +47,7 @@ export default function Header(props) {
   }
 
   return (
-    <div className='px-3 py-4 flex items-center justify-between bg-white shadow-md'>
+    <div className='px-3 py-4 flex items-center justify-between bg-white shadow-md mb-2'>
       <div className='flex items-center'>
         <div className="cursor-pointer w-[18px] md:w-[25px] aspect-[1/1] mx-1 md:mx-2" onClick={() => handleOpenDrawer()}>
           <img src={MenuIcon} className='w-full h-full' />
