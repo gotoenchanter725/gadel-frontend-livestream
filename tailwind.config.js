@@ -27,7 +27,8 @@ module.exports = {
                 '100%': "100% 100%"
             }, 
             boxShadow: {
-                'button': "0px 0px 8px rgba(255, 0, 0, 0.25)"
+                'button': "0px 0px 6px rgba(255, 0, 0, 0.15)", 
+                'down': '0px 2px 3px 3px rgba(255, 0, 0, 0.15)'
             }
         },
         screens: {
@@ -40,6 +41,6 @@ module.exports = {
     },
     plugins: [
         // require("flowbite/plugin"),
-        // require('tailwind-scrollbar')({ nocompatible: true })
+        require('tailwind-scrollbar')({ nocompatible: true })
     ]
 }

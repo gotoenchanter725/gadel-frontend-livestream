@@ -31,6 +31,16 @@ const routesConfig = [
     component: lazy(() => import('src/screens/profile/Profile'))
   },
   {
+    path: '/detail',
+    guard: AuthGuard,
+    component: lazy(() => import('src/screens/posts/detail'))
+  },
+  {
+    path: '/all',
+    guard: AuthGuard,
+    component: lazy(() => import('src/screens/posts/all'))
+  },
+  {
     path: '/posts',
     guard: AuthGuard,
     component: lazy(() => import('src/screens/posts/posts'))
