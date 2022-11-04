@@ -12,7 +12,7 @@ function PicturesScreen() {
             <Header />
             <div className='home main relative flex flex-col py-4 px-2 md:px-6'>
                 <SubHeader active='picture' />
-                <div className='w-full py-4 md:px-2 flex flex-wrap'>
+                <div className='w-full py-4 md:px-2 flex flex-wrap px-3'>
                     {
                         posts.map((item, index) => {
                             return (

@@ -22,7 +22,7 @@ function VideosScreen() {
             <Header />
             <div className='home main relative flex flex-col py-4 px-2 md:px-6'>
                 <SubHeader active='video' />
-                <div className='flex flex-col md:flex-row justify-between'>
+                <div className='flex flex-col md:flex-row justify-between px-3 md:px-0'>
                     <div className='w-full md:w-[75%]'>
                         <div className="rounded-xl shadow-button py-6">
                             <div className='px-6 pb-3'>
@@ -49,34 +49,34 @@ function VideosScreen() {
                                             <p className="text-[#727272] text-xs">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
                                         </div>
                                     </div>
-                                    <div className='flex justify-between mt-4'>
+                                    <div className='flex justify-between flex-wrap mt-4'>
                                         <div className='flex'>
                                             <div className='flex flex-col items-center mr-5'>
                                                 <div className='flex items-center'>
-                                                    <img className='w-[24px] mr-1.5' src={likeImage} alt='like' />
-                                                    <span className='font-semibold text-md text-black'>86</span>
+                                                    <img className='w-[18px] md:w-[24px] mr-1.5' src={likeImage} alt='like' />
+                                                    <span className='font-semibold text-sm md:text-md text-black'>86</span>
                                                 </div>
-                                                <span className='font-semibold text-md text-[#383333]'>Like</span>
+                                                <span className='font-semibold text-sm md:text-md text-[#383333]'>Like</span>
                                             </div>
                                             <div className='flex flex-col items-center mr-5'>
                                                 <div className='flex items-center'>
-                                                    <img className='w-[24px] mr-1.5' src={commentImage} alt='comment' />
-                                                    <span className='font-semibold text-md text-black'>86</span>
+                                                    <img className='w-[18px] md:w-[24px] mr-1.5' src={commentImage} alt='comment' />
+                                                    <span className='font-semibold text-sm md:text-md text-black'>86</span>
                                                 </div>
-                                                <span className='font-semibold text-md text-[#383333]'>Comment</span>
+                                                <span className='font-semibold text-sm md:text-md text-[#383333]'>Comment</span>
                                             </div>
                                             <div className='flex flex-col items-center mr-5'>
                                                 <div className='flex items-center'>
-                                                    <img className='w-[24px] mr-1.5' src={viewersImage} alt='viewers' />
-                                                    <span className='font-semibold text-md text-black'>23</span>
+                                                    <img className='w-[18px] md:w-[24px] mr-1.5' src={viewersImage} alt='viewers' />
+                                                    <span className='font-semibold text-sm md:text-md text-black'>23</span>
                                                 </div>
-                                                <span className='font-semibold text-md text-[#383333]'>Viewers</span>
+                                                <span className='font-semibold text-sm md:text-md text-[#383333]'>Viewers</span>
                                             </div>
                                             <div className='flex flex-col items-center mr-5'>
                                                 <div className='flex items-center'>
-                                                    <img className='w-[24px] mr-1.5' src={shareImage} alt='share' />
+                                                    <img className='w-[18px] md:w-[24px] mr-1.5' src={shareImage} alt='share' />
                                                 </div>
-                                                <span className='font-semibold text-md text-[#383333]'>Share</span>
+                                                <span className='font-semibold text-sm md:text-md text-[#383333]'>Share</span>
                                             </div>
                                         </div>
                                     </div>
@@ -185,9 +185,9 @@ function VideosScreen() {
                             </div>
                         </div>
                     </div>
-                    <div className='flex flex-col min-w-[200px] w-full md:w-[25%] ml-4'>
+                    <div className='flex flex-col min-w-[200px] w-full md:w-[25%] md:ml-4'>
                         <div className='flex flex-col'>
-                            <div className='flex justify-between mb-4'>
+                            <div className='flex justify-between mb-4 max-h-[100px]'>
                                 <img className='aspect-[4/3] w-1/2' src={videoImage} />
                                 <div className='flex flex-col justify-between ml-2'>
                                     <h6 className='text-sm font-semibold text-[#444040]'>Lorem Ipsum is simply dummy</h6>
@@ -197,7 +197,7 @@ function VideosScreen() {
                                     </div>
                                 </div>
                             </div>
-                            <div className='flex justify-between mb-4'>
+                            <div className='flex justify-between mb-4 max-h-[100px]'>
                                 <img className='aspect-[4/3] w-1/2' src={videoImage} />
                                 <div className='flex flex-col justify-between ml-2'>
                                     <h6 className='text-sm font-semibold text-[#444040]'>Lorem Ipsum is simply dummy</h6>
@@ -207,7 +207,7 @@ function VideosScreen() {
                                     </div>
                                 </div>
                             </div>
-                            <div className='flex justify-between mb-4'>
+                            <div className='flex justify-between mb-4 max-h-[100px]'>
                                 <img className='aspect-[4/3] w-1/2' src={videoImage} />
                                 <div className='flex flex-col justify-between ml-2'>
                                     <h6 className='text-sm font-semibold text-[#444040]'>Lorem Ipsum is simply dummy</h6>
@@ -217,7 +217,7 @@ function VideosScreen() {
                                     </div>
                                 </div>
                             </div>
-                            <div className='flex justify-between mb-4'>
+                            <div className='flex justify-between mb-4 max-h-[100px]'>
                                 <img className='aspect-[4/3] w-1/2' src={videoImage} />
                                 <div className='flex flex-col justify-between ml-2'>
                                     <h6 className='text-sm font-semibold text-[#444040]'>Lorem Ipsum is simply dummy</h6>

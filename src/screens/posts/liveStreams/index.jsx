@@ -24,10 +24,10 @@ function PostsScreen() {
     return (
         <div className="" style={{ position: 'relative' }}>
             <Header />
-            <div className='home main relative flex flex-col py-4 px-2 md:px-6'>
+            <div className='w-full home main relative flex py-4 px-2 md:px-6 flex-wrap'>
                 <SubHeader active='live-stream' />
 
-                <div className='flex flex-col md:flex-row justify-between'>
+                <div className='flex flex-col md:flex-row justify-between px-3 md:px-0'>
                     <div className='w-full md:w-[70%]'>
                         <div className="rounded-xl shadow-button py-6">
                             <div className='px-6 pb-3 border-b border-solid border-black'>
@@ -49,46 +49,46 @@ function PostsScreen() {
                                 <div className='flex flex-col'>
 
                                     <img src={videoImage} alt="video image" />
-                                    <div className='flex justify-between items-center mt-4'>
+                                    <div className='flex justify-between flex-wrap md:flex-nowrap items-center mt-4'>
                                         <div className='flex flex-col'>
-                                            <h1 className="text-md font-semibold text-[#383333] ">What is Lorem Ipsum?</h1>
+                                            <h1 className="text-sm md:text-md font-semibold text-[#383333] ">What is Lorem Ipsum?</h1>
                                             <p className="text-[#727272] text-xs">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
                                         </div>
-                                        <button className='px-2.5 py-1.5 rounded text-[#727272] bg-[#EBEAEA] shadow text-xs'>Gift page is active <Link className='text-[#03649B]' to={'/'}>see page</Link></button>
+                                        <button className='mt-2 md:mt-0 px-2.5 py-1.5 rounded text-[#727272] bg-[#EBEAEA] shadow text-xs'>Gift page is active <Link className='text-[#03649B]' to={'/'}>see page</Link></button>
                                     </div>
-                                    <div className='flex justify-between mt-4'>
+                                    <div className='flex justify-between flex-wrap mt-4'>
                                         <div className='flex'>
                                             <div className='flex flex-col items-center mr-5'>
                                                 <div className='flex items-center'>
-                                                    <img className='w-[24px] mr-1.5' src={likeImage} alt='like' />
-                                                    <span className='font-semibold text-md text-black'>86</span>
+                                                    <img className='w-[18px] md:w-[24px] mr-1.5' src={likeImage} alt='like' />
+                                                    <span className='font-semibold text-sm md:text-md text-black'>86</span>
                                                 </div>
-                                                <span className='font-semibold text-md text-[#383333]'>Like</span>
+                                                <span className='font-semibold text-sm md:text-md text-[#383333]'>Like</span>
                                             </div>
                                             <div className='flex flex-col items-center mr-5'>
                                                 <div className='flex items-center'>
-                                                    <img className='w-[24px] mr-1.5' src={commentImage} alt='comment' />
-                                                    <span className='font-semibold text-md text-black'>86</span>
+                                                    <img className='w-[18px] md:w-[24px] mr-1.5' src={commentImage} alt='comment' />
+                                                    <span className='font-semibold text-sm md:text-md text-black'>86</span>
                                                 </div>
-                                                <span className='font-semibold text-md text-[#383333]'>Comment</span>
+                                                <span className='font-semibold text-sm md:text-md text-[#383333]'>Comment</span>
                                             </div>
                                             <div className='flex flex-col items-center mr-5'>
                                                 <div className='flex items-center'>
-                                                    <img className='w-[24px] mr-1.5' src={viewersImage} alt='viewers' />
-                                                    <span className='font-semibold text-md text-black'>23</span>
+                                                    <img className='w-[18px] md:w-[24px] mr-1.5' src={viewersImage} alt='viewers' />
+                                                    <span className='font-semibold text-sm md:text-md text-black'>23</span>
                                                 </div>
-                                                <span className='font-semibold text-md text-[#383333]'>Viewers</span>
+                                                <span className='font-semibold text-sm md:text-md text-[#383333]'>Viewers</span>
                                             </div>
                                             <div className='flex flex-col items-center mr-5'>
                                                 <div className='flex items-center'>
-                                                    <img className='w-[24px] mr-1.5' src={shareImage} alt='share' />
+                                                    <img className='w-[18px] md:w-[24px] mr-1.5' src={shareImage} alt='share' />
                                                 </div>
-                                                <span className='font-semibold text-md text-[#383333]'>Share</span>
+                                                <span className='font-semibold text-sm md:text-md text-[#383333]'>Share</span>
                                             </div>
                                         </div>
                                         <div className='flex flex-col'>
-                                            <p className='text-center text-md font-bold text-xs text-[#727272]'>Other Options of live stream</p>
-                                            <div className='flex justify-between mt-2'>
+                                            <p className='text-center text-md font-bold text-xs my-2 text-[#727272]'>Other Options of live stream</p>
+                                            <div className='flex justify-between'>
                                                 <button className='bg-primary text-white text-sm px-4 py-1 mr-1'>OBS</button>
                                                 <button className='bg-primary text-white text-sm px-4 py-1'>vMix</button>
                                             </div>
@@ -175,7 +175,7 @@ function PostsScreen() {
                             </div>
                         </div>
                     </div>
-                    <div className='flex flex-col min-w-[250px] w-full md:w-[30%] ml-4'>
+                    <div className='flex flex-col min-w-[250px] w-full md:w-[30%] md:ml-4'>
                         <div className='flex flex-col shadow-button rounded'>
                             <div className='bg-[#FB6666] px-4 py-6 flex items-center justify-between'>
                                 <div className='flex items-center'>

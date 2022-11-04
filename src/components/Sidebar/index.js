@@ -31,7 +31,7 @@ function Sidebar({ active }) {
   }
 
   return (
-    <div className='fixed sm:static left-0 top-[100px] flex flex-col p-4 pr-0 sm:pr-2'>
+    <div className='hidden sm:flex flex-col p-4 pr-0 sm:pr-2'>
       <div className='custom-sidebar-container !m-0 w-[250px] sm:!w-full shadow-lg p-4'>
         <div className='sidebar'>
           <div className={`sidebar-row ${active === 'home' && 'sidebar-row-active'}`} onClick={() => navigate('/')}>

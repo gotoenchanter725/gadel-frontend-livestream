@@ -18,7 +18,7 @@ export default function CreatePostComponent(props) {
                         Create Post
                     </div>
                 </div>
-                <div className='post-container aspect-[5/3]'>
+                <div className='post-container aspect-[5/3] !mx-0'>
                     <div className='header-icon-container !p-0'>
                         <img src={user} className="user-image w-full h-full" />
                     </div>
@@ -29,11 +29,11 @@ export default function CreatePostComponent(props) {
                 </div>
                 <div className='new-post-buttons'>
                     <div className='new-post-buttons-left'>
-                        <div className='new-post-button'>
+                        <div className='new-post-button min-w-[120px] !mx-0'>
                             <VideocamRoundedIcon className='new-post-icon' />
                             <div className='new-post-text'>Live Video</div>
                         </div>
-                        <div className='new-post-button'>
+                        <div className='new-post-button !mx-0 !ml-2'>
                             <InsertPhotoRoundedIcon className='new-post-icon' />
                             <div className='new-post-text'>Photo/Video</div>
                         </div>
