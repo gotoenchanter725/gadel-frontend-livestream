@@ -65,6 +65,31 @@ const routesConfig = [
     guard: AuthGuard,
     component: lazy(() => import('src/screens/posts/liveStreams'))
   },
+  {
+    path: '/gifts',
+    guard: AuthGuard,
+    component: lazy(() => import('src/screens/gifts'))
+  },
+  {
+    path: '/policy',
+    guard: AuthGuard,
+    component: lazy(() => import('src/screens/policy'))
+  },
+  {
+    path: '/monetization',
+    guard: AuthGuard,
+    component: lazy(() => import('src/screens/monetization'))
+  },
+  {
+    path: '/monetization/tick',
+    guard: AuthGuard,
+    component: lazy(() => import('src/screens/monetization/tick'))
+  },
+  {
+    path: '/guide',
+    guard: AuthGuard,
+    component: lazy(() => import('src/screens/guide'))
+  },
 ];
 
 const renderRoutes = (routes) => (routes ? (
