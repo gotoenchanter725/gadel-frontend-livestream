@@ -22,6 +22,7 @@ module.exports = {
             backgroundImage: {
                 'auth-header-background': "url('assets/images/auth-background.png')",
                 'user-background': "url('assets/images/user-background.png')",
+                'profile-background': "url('assets/images/profile-header.png')",
             },
             backgroundSize: {
                 '100%': "100% 100%"

@@ -51,7 +51,7 @@ function Sidebar({ active }) {
           </div>
           <div
             className={`sidebar-row ${active === 'language' && 'sidebar-row-active'}`}
-            onClick={() => navigate('/history')}
+            onClick={() => navigate('/language')}
           >
             <GTranslateRoundedIcon className={`sidebar-icon ${active !== 'language' && 'inactive'}`} />
             <div className={`sidebar-item ${active === 'language' && 'sidebar-item-active'}`} >
@@ -60,7 +60,7 @@ function Sidebar({ active }) {
           </div>
           <div
             className={`sidebar-row ${active === 'support' && 'sidebar-row-active'}`}
-            onClick={() => navigate('/transactions')}
+            onClick={() => navigate('/support')}
           >
             <SupportAgentRoundedIcon className={`sidebar-icon ${active !== 'support' && 'inactive'}`} />
             <div className={`sidebar-item ${active === 'support' && 'sidebar-item-active'}`} >
@@ -69,7 +69,7 @@ function Sidebar({ active }) {
           </div>
           <div
             className={`sidebar-row ${active === 'settings' && 'sidebar-row-active'}`}
-            onClick={() => navigate('/transactions')}
+            onClick={() => navigate('/livestream-setting')}
           >
             <SettingsRoundedIcon className={`sidebar-icon ${active !== 'settings' && 'inactive'}`} />
             <div className={`sidebar-item ${active === 'settings' && 'sidebar-item-active'}`} >
