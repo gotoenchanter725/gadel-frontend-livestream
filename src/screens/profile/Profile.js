@@ -12,6 +12,7 @@ import messageImage from "../../assets/images/icon/message-white.png";
 import followAddImage from "../../assets/images/icon/followAdd.png";
 import postImage from "../../assets/images/icon/post.png";
 import supportImage from "../../assets/images/icon/support.png";
+import officialImage from "../../assets/images/icon/official.png";
 
 function ProfileScreen() {
   const navigate = useNavigate();
@@ -49,8 +50,11 @@ function ProfileScreen() {
           <div className='flex flex-col w-full pl-6'>
             <div className='flex justify-between items-center w-full'>
               <div className=''>
-                <h2 className='text-[#515151] text-xl pb-2 font-bold'>Umer57</h2>
-                <p className='text-[#575757]'>Pakistan</p>
+                <h2 className='text-[#515151] text-4xl pb-2 font-bold flex items-center'>
+                  <span>Umer57</span>
+                  <img className='w-[30px] aspect-[1/1] ml-2' src={officialImage} alt={'official'} />
+                </h2>
+                <p className='text-[#575757] font-semibold text-lg'>Pakistan</p>
               </div>
               <div className='flex items-center'>
                 <button className='flex items-center rounded-full text-white mr-2 px-3 py-1.5 bg-[#B7B7B7]'>
@@ -63,7 +67,7 @@ function ProfileScreen() {
                 </button>
               </div>
             </div>
-            <p className='text-[#868686]'>47 Videos | 2,21 Followers | 2,54 Likes</p>
+            <p className='text-[#868686] font-semibold text-lg'>47 Videos | 2,21 Followers | 2,54 Likes</p>
           </div>
           <div className='w-full py-4 md:px-2 flex flex-wrap px-3'>
             {
@@ -72,8 +76,8 @@ function ProfileScreen() {
                   <div key={index} className='w-full sm:w-[50%] lg:w-[33%] xl:w-[25%] aspect-[10/9] p-2 md:p-3'>
                     <div className='flex flex-col justify-end relative w-full h-full rounded-md overflow-hidden'>
                       <img className='-z-[10] absolute left-0 top-0 w-full h-full' src={item.img} alt='post image' />
-                      <div className='py-2 bg-[#ff6262b2]'>
-                        <h4 className='font-bold text-white text-md px-2'>
+                      <div className='px-2 py-4 bg-[#ff6262b2] min-h-[80px]'>
+                        <h4 className='font-bold text-white text-lg px-2'>
                           {"What is Lorem Ipsum?"}
                         </h4>
                       </div>
