@@ -100,6 +100,21 @@ const routesConfig = [
     guard: AuthGuard,
     component: lazy(() => import('src/screens/livestream-setting'))
   },
+  {
+    path: '/follows',
+    guard: AuthGuard,
+    component: lazy(() => import('src/screens/follows'))
+  },
+  {
+    path: '/support',
+    guard: AuthGuard,
+    component: lazy(() => import('src/screens/support'))
+  },
+  {
+    path: '/payment',
+    guard: AuthGuard,
+    component: lazy(() => import('src/screens/payment'))
+  },
 ];
 
 const renderRoutes = (routes) => (routes ? (
