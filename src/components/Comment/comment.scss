@@ -1,0 +1,36 @@
+.comment {
+    input {
+        border: solid rgb(233, 229, 229) 1px;
+    }
+}
+
+.post-comment-prev {
+    width: 90%;
+    .arrow {
+        width: 30px;
+        height: 30px;
+        margin-top: -10px;
+        margin-left: 10px;
+        border-bottom: solid rgb(136, 132, 132) 3px;
+        border-left: solid rgb(136, 132, 132) 3px;
+        border-bottom-left-radius: 20px;
+    }
+    .content-box{
+        padding-left: 10px;
+        height: 40px;
+        margin-top: -3px;
+        width: 80%;
+        .sender-name {
+            display: block;
+            font-weight: bold;
+            padding: 0;
+            height: 20px;
+        }
+        .content {
+            font-size: 12px;
+            color: rgb(163, 163, 163);
+            height: 18px;
+        }
+        // overflow: hidden;
+    }
+}

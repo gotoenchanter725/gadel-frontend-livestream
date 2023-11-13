@@ -1,0 +1,57 @@
+.notification-dropdown{
+    position: absolute;
+    display: block;
+    right: 10px;
+    z-index: 10;
+    background: #FFFFFF;
+    box-shadow: 0px 0px 7px rgba(255, 0, 0, 0.25);
+    padding: 10px;
+    transition: ease all 0.3s;
+    cursor: auto;
+    .title {
+        text-align: center;
+        color: black;
+        width: 100%;
+    }
+    .header {
+        padding: 5px;
+        padding-bottom: 15px;
+        width: 100%;
+        background-color: white;
+        border-bottom: solid #CBC8C8 1px;
+    }
+    .notification-list{
+        .notification{
+            padding: 10px;
+            .content{
+                line-height: 2px;
+                p{
+                    word-break: break-all;
+                    word-spacing: 2px;
+                    text-indent: 5px;
+                }
+            }
+        }
+    }
+}
+
+.user-item.active {
+    color: #e04636;
+    background-color: #efe8e8;
+    
+}
+// .message-item.out>div{
+//     flex-direction: row-reverse;
+//     right: 0px;
+// }
+
+// .message-item.out>div.message-item {
+//     background-color: #fecaca;
+// }
+
+// .message-item.in>div {
+//     background-color: #bfdbfe;
+// }
+// .message-item.out .content {
+//     margin-right: 10px;
+// }

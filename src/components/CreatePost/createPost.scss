@@ -1,0 +1,101 @@
+    .create-post-container-wrapp {
+        background-color: #ffffff;
+        border-radius: 10px;
+        padding: 10px;
+
+        .create-post-container {
+            display: flex;
+            align-items: center;
+        }
+
+        .create-post {
+            color: #9b9a9b;
+            font-size: 18px;
+            margin-left: 10px;
+            font-family: 'Poppins';
+            input{
+                max-width: 80%;
+            }
+        }
+
+        .post-container {
+            width: 97%;
+            margin: 15px 10px;
+            border-radius: 10px;
+            border: 1px solid #9b9a9b;
+            padding: 10px;
+        }
+
+        .post-container>.input{
+            display: flex;
+            align-items: flex-start;
+        }
+
+        .post-container>.prev>*{
+            width:100%;
+            border-radius: 10px;
+        }
+
+        .new-post-input {
+            border: 0px;
+            margin-top: 7px;
+            font-family: 'Poppins';
+            width: 100%;
+            resize: none;
+            outline: none;
+        }
+
+        .new-post-buttons {
+            display: flex;
+            @media only screen and (max-width: 500px)  {
+                flex-direction: row-reverse;
+            }
+            align-items: center;
+            justify-content: space-between;
+            margin-right: 10px;
+            flex-wrap: wrap;
+        }
+
+        .new-post-buttons-left {
+            display: flex;
+            align-items: center;
+        }
+
+        .new-post-button {
+            display: flex;
+            align-items: center;
+            padding: 5px 10px;
+            margin: 5px 10px;
+            background-color: #efe8e8;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .new-post-button:hover {
+            transition: all ease 0.3s;
+            background-color: #e2d2d2;
+        }
+
+        .submit-button {
+            background-color: #e24333;
+            border-radius: 20px;
+            color: #ffffff;
+            font-weight: 600;
+            padding: 7px 20px;
+            margin-bottom: 4px;
+            cursor: pointer;
+        }
+
+        .new-post-icon {
+            font-size: 20px !important;
+            color: #e04636;
+        }
+
+        .new-post-text {
+            font-size: 14px;
+            color: #000000;
+            font-family: 'Poppins';
+            font-weight: 600;
+            margin-left: 10px;
+        }
+    }
